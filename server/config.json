@@ -1,0 +1,12 @@
+{
+	"host": "127.0.0.1",
+	"port": 8075,
+	"base": "",
+	"proxied": true,
+	"discord": {
+		"bot_id": "",
+		"secret": "",
+		"redirect_uri": "https://api.botlist.gg/v1/auth/login/callback",
+		"token_uri": "https://botlist.gg/auth/login/callback"
+	}
+}

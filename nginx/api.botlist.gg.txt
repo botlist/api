@@ -1,0 +1,15 @@
+server {
+	listen 443 ssl;
+	server_name api.botlist.gg;
+	charset utf8mb4;
+	client_max_body_size 8M;
+	ssl_certificate /var/www/api.botlist.gg/cert/cert.cert;
+	ssl_certificate_key /var/www/api.botlist.gg/cert/cert.key;
+
+	location / {
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $http_cf_connecting_ip;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_pass http://127.0.0.1:8075;
+	}
+}
